@@ -27,7 +27,7 @@ namespace _04_RU_HalloNaam
             // Stap 2: Maak de juiste tekst
             // _bewerking = "Hallo " + _naamGebruiker; 
             // _bewerking = String.Format("Hallo {0}", _naamGebruiker);
-            _bewerking = $"Hallo {_naamGebruiker}";
+            _bewerking = $"Hallo {_naamGebruiker}\nMijn naam is Rayven en ik ben de programmeur";
 
             
             // Scherm wissen
