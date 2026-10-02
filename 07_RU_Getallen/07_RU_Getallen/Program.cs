@@ -43,12 +43,15 @@ namespace _07_RU_Getallen
 
 
                 // Stap 4: Toon de juiste tekst
+                Console.WriteLine($"Dit is het derde getal: {_getalDrie}. \ndit is het tweede getal: {_getalTwee}. \nDit is het eerste getal: {_getalEen}");
 
             }
             catch
             {
 
-                // Scherm leegmaken
+                // Scherm leegmaken + foutcode
+                Console.Clear();
+                Console.WriteLine("er ging iets fout");
 
 
 
