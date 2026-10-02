@@ -43,8 +43,9 @@ namespace _07_RU_Getallen
 
 
                 // Stap 4: Toon de juiste tekst
-                Console.WriteLine($"Dit is het derde getal: {_getalDrie}. \ndit is het tweede getal: {_getalTwee}. \nDit is het eerste getal: {_getalEen}");
-
+                Console.WriteLine($"Dit is het derde getal: {_getalDrie.ToString()}. \nDit is het tweede getal: {_getalTwee.ToString()}. \nDit is het eerste getal: {_getalEen.ToString()}");
+                Console.WriteLine("\nDruk op enter om af te sluiten");
+                Console.ReadKey();
             }
             catch
             {
