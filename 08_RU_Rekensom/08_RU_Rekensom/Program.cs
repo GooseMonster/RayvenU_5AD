@@ -74,6 +74,14 @@ namespace _08_RU_Rekensom
                     Console.WriteLine("\n Druk op enter om af te sluiten");
                     Console.ReadKey();
                 }
+                catch
+                {
+                    // Scherm leegmaken
+                    Console.Clear();
+
+                    // Foutmelding
+                    Console.WriteLine(" Uw tweede getal was fout!");
+                }
             }
             catch
             {
@@ -81,12 +89,7 @@ namespace _08_RU_Rekensom
                 Console.Clear();
 
                 // Foutmelding
-                Console.WriteLine(" Uw tweede getal was fout!");
-
-
-            }
-            catch
-            {
+                Console.WriteLine(" Uw eerste getal was fout!");
 
             }
 
