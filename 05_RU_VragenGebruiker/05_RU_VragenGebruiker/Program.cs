@@ -23,6 +23,7 @@ namespace _05_RU_VragenGebruiker
             String _bewerking2 = null;
 
             // Programma
+
             // 1. Vraag de gebruikers favoriete kleur + antwoord opslaan
             Console.Write("Kies een kleur: ");
             _kleurGebruiker = Console.ReadLine();
