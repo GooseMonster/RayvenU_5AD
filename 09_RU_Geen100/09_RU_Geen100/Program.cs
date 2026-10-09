@@ -41,7 +41,7 @@ namespace _09_RU_Geen100
                 Console.WriteLine("Je getal was tegen de regels");
             }
             // Scherm wissen
-            Console.WriteLine("\n Druk op enter om af te sluiten ");
+            Console.WriteLine("\nDruk op enter om af te sluiten ");
             Console.ReadKey();
             Console.Clear();
             
