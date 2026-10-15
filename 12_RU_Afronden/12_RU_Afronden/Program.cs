@@ -16,21 +16,21 @@ namespace _12_RU_Afronden
             // Project Afronden
 
             // Velden
-            float floatvar = 0;
-            double doublevar = 0;
-            decimal decimalvar = 0;
+            float _floatvar = 0;
+            double _doublevar = 0;
+            decimal _decimalvar = 0;
 
             // Programma
 
             //Stap 1: Bereken 0.1 + 0.2 in de 3 typen van variabelen
-            floatvar = 0.1f + 0.2f;
-            doublevar = 0.1 + 0.2;
-            decimalvar = 0.1M + 0.2M;
+            _floatvar = 0.1f + 0.2f;
+            _doublevar = 0.1 + 0.2;
+            _decimalvar = 0.1M + 0.2M;
 
             //Stap 2: toon de resultaten
-            Console.WriteLine($"float: {floatvar}");
-            Console.WriteLine($"double: {doublevar}");
-            Console.WriteLine($"decimal: {decimalvar}");
+            Console.WriteLine($"float: {_floatvar}");
+            Console.WriteLine($"double: {_doublevar}");
+            Console.WriteLine($"decimal: {_decimalvar}");
 
             Console.WriteLine("\nDruk op enter om verder te gaan");
             Console.ReadKey();
@@ -38,7 +38,7 @@ namespace _12_RU_Afronden
             Console.Clear();
 
             //Stap 3: Ga na of float exact 0.3 weergeeft
-            if (floatvar == 0.3)
+            if (_floatvar == 0.3f)
 
             {
                 //	Als - ja
@@ -55,7 +55,7 @@ namespace _12_RU_Afronden
 
 
             //Stap 6: Ga na of double exact 0.3 weergeeft
-            if (doublevar == 0.3)
+            if (_doublevar == 0.3)
             {
                 //	Als - ja
                 //      Stap 7: Toon “exact 0.3”
@@ -70,7 +70,7 @@ namespace _12_RU_Afronden
             }
 
             //Stap 9: Ga na of decimal exact 0.3 weergeeft
-            if (decimalvar == 0.3M)
+            if (_decimalvar == 0.3M)
             {
                 //	Als - ja
                 //      Stap 10: Toon “exact 0.3”
