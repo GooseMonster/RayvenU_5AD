@@ -16,10 +16,11 @@ namespace _15_RU_MeerDob
             // Project MeerDobbelstenen
 
             // Velden
-            Random _rdm1 = new Random();
+            Random _rdm = new Random();
             Byte _aantalOgen = 0;
             Byte _keuze = 0;
-
+            int _totaal = 0;
+            
             // Programma
             do
             {
@@ -59,26 +60,44 @@ namespace _15_RU_MeerDob
                     {
                         // Stap 5: vraag hoeveel ogen de dobbelsteen heeft +opslaan
                         Console.Write("Geef het aantal ogen dat u voor de dobbelsteen wilt: ");
-                        _aantalOgen = byte.Parse(Console.ReadLine());                    
+                        _aantalOgen = byte.Parse(Console.ReadLine());
+                        _aantalOgen++;
+                        // _aantalOgen += 1;
+                        // _aantalOgen =_aantalOgen +1;
+
+
                     }
                     // Als 2:
                     else if (_keuze == 2)
                     {
                         // Stap 6: Toon de worp van de dobbelsteen +opslaan
+                        Byte worp = Convert.ToByte(_rdm.Next(1,_aantalOgen));
+                        Console.WriteLine($"Uw worp is: {worp.ToString()}");
 
                         // Stap 7: Toon het totaal van alle worpen samen
+                        _totaal += worp;
+                        Console.WriteLine($"\nIn het totaal heeft u {_totaal.ToString()} geworpen");
+                        Console.WriteLine("\nDruk op enter om terug te keren naar het menu.");
+                        Console.ReadKey();
                     }
                     // Als 3:
-                    if (_keuze == 3)
+                    else if (_keuze == 3)
                     {
-                        
+
                         // Stap 8: reset het resultaat
+                        _totaal = 0;
+                        Console.WriteLine("\nUw totaal is gereset.");
+                        Console.WriteLine("\nDruk op enter om terug te keren naar het menu.");
+                        Console.ReadKey();
                     }
                     // Als 4:
                     else if (_keuze == 4)
                     {
-                        
+
                         // Stap 9: Toon afsluittekst
+                        Console.WriteLine("\nTot een volgende keer");
+                        Console.WriteLine("\nDruk op enter om af te sluiten.");
+                        Console.ReadKey();
                     }
                     
                 }
@@ -88,8 +107,8 @@ namespace _15_RU_MeerDob
                     Console.Clear();
 
                     // foutmelding
-                    Console.WriteLine("U gaf geen getal in.");
-                    Console.WriteLine("Druk op enter om naar het hoofdmenu te gaan");
+                    Console.WriteLine("\nU gaf geen juiste keuze in.");
+                    Console.WriteLine("\nDruk op enter om naar het hoofdmenu te gaan");
                     Console.ReadKey();
                 }
             }
