@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,10 @@ namespace _17_RU_ProjectCilinder
 
             // Velden
             Byte _keuze = 0;
-            double _grondvlak = 0;
+            double _straal = 0;
             double _hoogte = 0;
+            double _omtrek = 0;
+            double _inhoud = 0;
 
             // Programma
             do
@@ -37,14 +40,26 @@ namespace _17_RU_ProjectCilinder
                     if (_keuze == 1)
                     {
                         Console.Write("Geef de straal van het grondvlak van de cilinder in centimeter: ");
-                        _grondvlak = double.Parse(Console.ReadLine());
-                        
+                        _straal = double.Parse(Console.ReadLine());
+
                         Console.Write("Geef de hoogte van de cilinder in centimeter: ");
                         _hoogte = double.Parse(Console.ReadLine());
+
+                        // Scherm Wissen
+                        Console.Clear();
+
+                        // Stap 3: Bereken en toon de uitkomst van de cilinder
+                        _omtrek = 2 * _straal * Math.PI;
+                        _inhoud = Math.PI * Math.Pow(_straal, 2) * _hoogte;
+
+                        Console.WriteLine($"De omtrek van de cilinder is: {_omtrek} centimeter ");
+                        Console.WriteLine($"De inhoud van de cilinder is: {_inhoud} centimeter ");
+
+                        // Scherm wissen
+                        Console.WriteLine("\nDruk op enter om af te sluiten");
+                        Console.ReadKey();
+                        Console.Clear();
                     }
-
-                    // Stap 3: Bereken en toon de uitkomst van de cilinder
-
                     // Stap 4: Zolang keuze niet 2 is, ga terug naar stap 1
                 }
                 catch
