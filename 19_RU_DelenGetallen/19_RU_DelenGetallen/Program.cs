@@ -15,16 +15,19 @@ namespace _19_RU_DelenGetallen
             // Project DelenGetallen
 
             // Velden
-            int intDeler = 5, intDeeltal = 3;
-            double doubleDeler = 5, doubleDeeltal = 3;
-            decimal decimalDeler = 5m, decimalDeeltal = 3m;
+            int intDeler = 7, intDeeltal = 3;
+            double doubleDeler = 7, doubleDeeltal = 3;
+            decimal decimalDeler = 7m, decimalDeeltal = 3m;
 
             // Programma
-
+            
             Console.WriteLine("Normale deling met / :");
-            Console.WriteLine($"met int deler en int deeltal {(intDeeltal / intDeler).ToString()}");
+            double uitkomst = intDeeltal / intDeler;
+            Console.WriteLine($"met int deler en int deeltal {uitkomst.ToString()}");
+
             Console.WriteLine($"met int deler en double deeltal {(doubleDeeltal / intDeler).ToString()}");
             Console.WriteLine($"met int deler en decimal deeltal {(decimalDeeltal / intDeler).ToString()}");
+
             Console.WriteLine();
             Console.WriteLine($"met double deler en int deeltal {(intDeeltal / doubleDeler).ToString()}");
             Console.WriteLine($"met double deler en double deeltal {(doubleDeeltal / doubleDeler).ToString()}");
@@ -34,6 +37,13 @@ namespace _19_RU_DelenGetallen
             // Dit kan niet : Console.WriteLine($"met decimal deler en double deeltal {(doubleDeeltal / decimalDeler).ToString()}");
             Console.WriteLine($"met decimal deler en decimal deeltal {(decimalDeeltal / decimalDeler).ToString()}");
 
+            Console.WriteLine();
+            Console.WriteLine($"met een getal als deler en int deeltal {(intDeeltal / 7).ToString()}");
+            Console.WriteLine($"met een getal als deler en double deeltal {(doubleDeeltal / 7).ToString()}");
+
+            Console.WriteLine();
+            Console.WriteLine($"met int als deler en een getal deeltal {(3 / intDeler ).ToString()}");
+            Console.WriteLine($"met double als deler en een getal deeltal {(3 / doubleDeler).ToString()}");
         }   
     }
 }
