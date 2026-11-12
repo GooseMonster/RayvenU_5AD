@@ -36,12 +36,41 @@ namespace _22_RU_DateTimeFuncties
             Console.WriteLine($"Het jaar van vandaag: {_datum.Year.ToString()}\n");
 
             // dag van de huidige datum
-            _datum = DateTime.Now;
             Console.WriteLine($"De dag van vandaag: {_datum.Day.ToString()}\n");
 
             // Uur van de huidige datum
-            _datum = DateTime.Now;
             Console.WriteLine($"Het uur van vandaag: {_datum.Hour.ToString()}\n");
+
+            // Dag van de week
+            Console.WriteLine($"De dag van de week: {_datum.DayOfWeek.ToString()}\n");
+            int uitkomst = Convert.ToInt32(_datum.DayOfWeek);
+            Console.WriteLine($"{uitkomst.ToString()} \n");
+
+            // Toevoegen van jaren, maanden, dagen, uren, minuten, seconden...
+            _datum = _datum.AddYears(1).AddMonths(5).AddDays(4).AddHours(2).AddMinutes(20);
+            Console.WriteLine($"Het uur van vandaag: {_datum.ToString()}\n");
+            _datum = _datum.AddYears(-1).AddMonths(-5).AddDays(-4).AddHours(-2).AddMinutes(-20);
+            Console.WriteLine($"Het uur van vandaag: {_datum.ToString()}\n");
+
+            // De verschillende ToString mogelijkheden
+            Console.WriteLine("Hier zijn de verschillende ToString opties: \n");
+            Console.WriteLine($"De normale ToString: {_datum.ToString()}\n");
+            Console.WriteLine($"De Long Date: {_datum.ToLongDateString()}\n");
+            Console.WriteLine($"De Long Time: {_datum.ToLongTimeString()}\n");
+            Console.WriteLine($"De Short Date: {_datum.ToShortDateString()}\n");
+            Console.WriteLine($"De Short Time: {_datum.ToShortTimeString()}\n");
+
+            // Rekenen met datums
+            DateTime datum2 = DateTime.Now.AddYears(3);
+            // Rechstreeks rekenen met datums gaat niet!
+            // _datum = datum2 - _datum;
+
+            // Je moet een variabele gebruiken van et datatype TimeSpan.
+            TimeSpan verschil = datum2 - _datum;
+
+
+            Console.WriteLine($"{verschil.ToString()} \n");
+
 
 
         }
