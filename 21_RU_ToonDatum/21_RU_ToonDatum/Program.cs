@@ -26,7 +26,7 @@ namespace _21_RU_ToonDatum
                 Console.Clear();
                 Console.WriteLine($"De default DateTime: {_datum.ToString()}");
                 Console.WriteLine($"Het minimum DateTime: {_datum2.ToString()}");
-                Console.WriteLine($"De huidige DateTime: {DateTime.Now}");
+                Console.WriteLine($"De huidige DateTime: {DateTime.Now.ToString()}");
                 Thread.Sleep(1000);
             }
         }
