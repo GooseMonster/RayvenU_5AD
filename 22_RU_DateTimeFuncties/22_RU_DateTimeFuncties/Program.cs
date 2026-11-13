@@ -88,22 +88,48 @@ namespace _22_RU_DateTimeFuncties
             Console.Clear();
 
             // Laat de gebruiker een datum ingeven
-            Console.Write("\nGeef een datum in (dd/mm/jjjj): ");
+            Console.Write("Geef een datum in (dd/mm/jjjj): ");
             string datum = Console.ReadLine();
 
-            Console.Write("\nGeef een bepaald tijdstip van deze dag in (hh/mm): ");
+            Console.Write("Geef een bepaald tijdstip van deze dag in (hh:mm): ");
             String tijdstip = Console.ReadLine();
 
             try
             {
 
                 DateTime ingegevenDatum = DateTime.Parse($"{datum} {tijdstip}");
+                DateTime enkelDatum = DateTime.Parse($"{datum}");
+                DateTime enkelUur = DateTime.Parse($"{tijdstip}");
+
+                Console.WriteLine($"\nHier is de volledige datum en tijd : {ingegevenDatum.ToString()}");
+                Console.WriteLine($"Hier is enkel de datum : {enkelDatum.ToString()}");
+                Console.WriteLine($"Hier is enkel de tijd : {enkelUur.ToString()}");
 
                 // bevestiging
                 Console.WriteLine("\nGelukt");
-                Console.WriteLine("\nDruk op enter om verder te gaan ");
+                Console.WriteLine("\n\nDruk op enter om verder te gaan ");
                 Console.ReadKey();
 
+                // Scherm wissen
+                Console.Clear();
+
+                // zeg of de ingegeven datum vroeger of later dan vandaag is
+                if(_datum.Date < ingegevenDatum)
+                {
+                    Console.WriteLine("\nJouw ingegeven datum ligt in de toekomst!");
+                }
+                else if (_datum.Date > ingegevenDatum)
+                {
+                    Console.WriteLine("\nJouw ingegeven datum ligt in het verleden!");
+
+                }
+                else
+                {
+                    Console.WriteLine("\nJouw ingegeven datum is de dag van vandaag.");
+
+                }
+                Console.WriteLine("\n\nDruk op enter om verder te gaan ");
+                Console.ReadKey();
             }
             catch
             {
