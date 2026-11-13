@@ -71,6 +71,48 @@ namespace _22_RU_DateTimeFuncties
 
             Console.WriteLine($"{verschil.ToString()} \n");
 
+            double aantalDagen = verschil.Days; // Geeft het aantal dagen afgerond
+            double aantalDagen2 = verschil.TotalDays; // Kan een kommagetal zijn
+
+            Console.WriteLine($"Days = {aantalDagen.ToString()} en TotalDays = {aantalDagen2.ToString()}\n");
+
+            double aantalUren = verschil.Hours; // Geeft het aantal dagen afgerond
+            double aantalUren2 = verschil.TotalHours; // Kan een kommagetal zijn
+
+            Console.WriteLine($"Hours = {aantalUren.ToString()} en TotalHours = {aantalUren2.ToString()}\n");
+
+            Console.WriteLine("Druk op enter om verder te gaan");
+            Console.ReadKey();
+
+            // Scherm wissen
+            Console.Clear();
+
+            // Laat de gebruiker een datum ingeven
+            Console.Write("\nGeef een datum in (dd/mm/jjjj): ");
+            string datum = Console.ReadLine();
+
+            Console.Write("\nGeef een bepaald tijdstip van deze dag in (hh/mm): ");
+            String tijdstip = Console.ReadLine();
+
+            try
+            {
+
+                DateTime ingegevenDatum = DateTime.Parse($"{datum} {tijdstip}");
+
+                // bevestiging
+                Console.WriteLine("\nGelukt");
+                Console.WriteLine("\nDruk op enter om verder te gaan ");
+                Console.ReadKey();
+
+            }
+            catch
+            {
+                // Foutcode
+                Console.WriteLine("Er ging iets mis. ");
+                Console.WriteLine("\nDruk op enter om verder te gaan ");
+                Console.ReadKey();
+
+            }
 
 
         }
