@@ -17,7 +17,10 @@ namespace _23_RU_RaadSpel
             // Velden
 
             Byte _keuze = 0;
+            const Byte _aantalKansen = 7;
             // Programma
+
+            
 
             do
             {
@@ -26,7 +29,7 @@ namespace _23_RU_RaadSpel
 
                 //  Stap 1: Toon het menu(Spel spelen, Afsluiten)
                 Console.WriteLine("Maak uw keuze uit onderstaand menu:");
-                Console.WriteLine("     1) Speel het spel\n     2) Afsluiten");
+                Console.WriteLine("\n     1) Speel het spel\n     2) Afsluiten");
 
                 try
                 {
@@ -34,6 +37,8 @@ namespace _23_RU_RaadSpel
                     Console.Write("\nGeef uw keuze: ");
                     _keuze = Byte.Parse(Console.ReadLine());
 
+                    //Scherm wissen
+                    Console.Clear();
 
                     // Stap 3: Als 1:
                     if (_keuze == 1)
@@ -46,31 +51,97 @@ namespace _23_RU_RaadSpel
                         Byte geheimGetal = Convert.ToByte(rdm.Next(1, 101));
                         bool gevonden = false;
 
-                        // Stap 5: Geef de gebruiker 5 kansen
-                        for (int i = 5; i > 0; i--) ;
+                        // Stap 5: Geef de gebruiker 7 kansen
+                        for (int i = _aantalKansen; i > 0; i--) 
                         {
+                            // Scherm wissen
+                            Console.Clear();
+                            try
+                            {
 
-                            // Stap 6: Vraag de gokpoging van de gebruiker
+                                // Stap 6: Vraag de gokpoging van de gebruiker
+                                Console.WriteLine($"U heeft nog {i.ToString()} kansen");
+                                Console.Write("\nDoe een gok naar het geheime getal : ");
+                                Byte raadkans = Byte.Parse(Console.ReadLine());
 
-                            //  Stap 7: Kijk of de gok juist is
-                            //  Als de gok kleiner is:
+                                // Scherm wissen
+                                Console.Clear();
 
-                            //	Stap 8: Zeg het te raden getal is hoger
-                            //  Als de gok hoger is:
+                                //  Stap 7: Kijk of de gok juist is
 
-                            //	Stap 9: Zeg het te raden getal is lager
-                            //  Als de gok juist is:
+                                //  Als de gok kleiner is:
+                                if (raadkans < geheimGetal)
+                                {
+                                    //	Stap 8: Zeg het te raden getal is hoger
+                                    Console.WriteLine("Sorry, maar het te raden getal is hoger");
+                                    
+                                }
+                                //  Als de gok hoger is:
+                                else if (raadkans > geheimGetal)
+                                {
+                                    //	Stap 9: Zeg het te raden getal is lager
+                                    Console.WriteLine("Sorry, maar het te raden getal is lager");
+                                }
+                                //  Als de gok juist is:
+                                else
+                                {
+                                    //	Stap 10: Zeg proficiat + stop lus
+                                    Console.WriteLine($"\nYay, je hebt het getal geraden in {(_aantalKansen+1-i).ToString()} keren");
+                                    Console.WriteLine("Ga alsjeblieft nu iets nuttig doen met je leven");
+                                    gevonden = true;
 
-                            //	Stap 10: Zeg proficiat
+                                }
+                                // Ga na of het getal gevonden is
+                                if(gevonden)
+                                {
+                                    
+                                    Console.WriteLine("\nDruk op enter om terug te keren naar het menu");
+                                    Console.ReadKey();
+                                    // Stop de lus.
+                                    break;
+                                }
+                                else
+                                {
+                                    if(i == 1)
+                                    {
+                                        // Als de kansen op zijn:
+                                        // Stap 11: Zeg de kansen zijn op en toon het getal
+                                        Console.WriteLine("Jammer maar jou kansen zijn op, je hebt het getal niet gevonden");
+                                        Console.WriteLine($"Het getal dat je zocht was: {geheimGetal.ToString()}");
+                                        Console.WriteLine("\nDruk op enter om terug te keren naar het menu");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("\nDruk op enter om nog eens te proberen");
+
+                                    }
+
+                                }
+                                Console.ReadKey();
+                            }
+                            catch
+                            {
+                                // Scherm wissen
+                                Console.Clear();
+
+                                // foutmelding
+                                Console.WriteLine("U gaf geen getal in");
+                                Console.WriteLine("Druk op enter om opnieuw te proberen");
+                                Console.ReadKey();
+
+                                // Zorg dat het aantal kansen behouden blijft
+                                i++;
+                            }
                         }
-                        // Als de kansen op zijn:
-                        // Stap 11: Zeg de kansen zijn op en toon het getal
+                        
 
                         // Als de gok niet juist was en er nog raad kansen over zijn, keer terug naar stap 6
                     }
                     // Als 2:
                     else if (_keuze == 2)
                     {
+                        
+
                         // Stap 12: Toon afsluittekst
                         Console.WriteLine("Tot een volgende keer ");
                         Console.WriteLine("\nDruk op een knop om af te sluiten. ");
@@ -79,6 +150,9 @@ namespace _23_RU_RaadSpel
                     // in elk andergeval
                     else
                     {
+                        // Scherm wissen
+                        Console.Clear();
+
                         // Foutmelding
                         Console.WriteLine("U gaf geen getal in. ");
                         Console.WriteLine("\nDruk op een knop om terug te keren naar het hoofdmenu. ");
